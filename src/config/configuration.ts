@@ -14,7 +14,7 @@ export default () => ({
       process.env.CLASSIFIER_BASE_URL?.replace(/\/$/, '') ??
       'http://ds-stage.alm-data.io',
     token: process.env.CLASSIFIER_TOKEN,
-    timeoutMs: parsePositiveInt(process.env.CLASSIFIER_TIMEOUT_MS, 2500),
+    timeoutMs: parsePositiveInt(process.env.CLASSIFIER_TIMEOUT_MS, 10000),
     retries: parsePositiveInt(process.env.CLASSIFIER_RETRIES, 2),
   },
   intentDetection: {
