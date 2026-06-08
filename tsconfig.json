@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es2020",
+    "module": "commonjs",
+    "sourceMap": true,
+    "inlineSources": true,
+    "types": ["jest", "node"],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@modules/*": ["./src/modules/*"],
+      "@common/*": ["./src/common/*"],
+      "@decorators/*": ["./src/common/decorators/*"],
+      "@config/*": ["./src/config/*"],
+      "@services/*": ["./src/Services/*"],
+      "@interfaces/*": ["./src/Interfaces/*"],
+      "@middlewares/*": ["./src/Middlewares/*"],
+      "@utils/*": ["./src/Utils/*"],
+      "@interceptors/*": ["./src/common/interceptors/*"],
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

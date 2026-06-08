@@ -1,0 +1,49 @@
+#Scaling Parameters
+hpa:
+  enabled: true
+  targetCPUUtilizationPercentage: 70
+  TargetAvgMemoryUtilization: 70
+replicaCount: 2
+maxReplicas: 10
+
+resources:
+  limits:
+    cpu: '1'
+    memory: 1Gi
+  requests:
+    cpu: '50m'
+    memory: '128Mi'
+
+## Ingress Configuration ##
+ingress_internal:
+  enabled: true
+  hosts:
+    whatsapp-intent-detection-service.tajawal-prod-apps.internal:
+      - /
+ingress_public:
+  enabled: false
+
+# Istio Gateway
+istio:
+  enabled: false
+  internal_gateway:
+    enabled: false
+    host:
+      whatsapp-intent-detection-service.tajawal-prod-apps.internal:
+        - /
+  virtualService:
+    enabled: false
+
+environment_variable:
+  enabled: true
+  data:
+    APP: 'whatsapp-intent-detection-service-prod-apps'
+    ENV: 'production'
+    PORT: '80'
+    HOST: '0.0.0.0'
+    INTERNAL_SECRET_HEADER: 'x-internal-secret'
+    CLASSIFIER_BASE_URL: 'http://ds-stage.alm-data.io'
+    CLASSIFIER_TIMEOUT_MS: '2500'
+    CLASSIFIER_RETRIES: '2'
+    INTENT_MAPPING_VERSION: 'v1'
+    FALLBACK_INTENT: 'live_agent_escalation'

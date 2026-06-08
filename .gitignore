@@ -1,0 +1,22 @@
+node_modules/
+uploads/*
+.DS_Store
+.env
+cache.json
+.idea/
+.vscode/
+
+# Build and test outputs
+dist/
+coverage/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-*debug.log*
+yarn-error.log
+
+
+.vscode/settings.json

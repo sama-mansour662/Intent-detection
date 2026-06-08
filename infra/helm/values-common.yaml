@@ -1,0 +1,14 @@
+#Component Details ##
+Component: whatsapp
+SubComponent: intent-detection-service
+
+## Secrets ##
+secret_variable:
+  enabled: true
+  data:
+    - INTERNAL_SECRET_KEY
+    - CLASSIFIER_TOKEN
+
+## Probes ##
+readinessProbePath: /api/ping
+livenessProbePath: /api/health
