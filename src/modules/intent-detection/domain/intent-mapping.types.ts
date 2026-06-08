@@ -13,15 +13,9 @@ export interface IntentMappingRule {
   pending?: true;
 }
 
-export interface IntentMappingConfig {
-  version: string;
-  rules: IntentMappingRule[];
-}
-
 export interface MappedIntent {
   intent: string;
   intentGroup: IntentGroup;
-  mappingVersion: string;
 }
 
 export type ClassificationMappingInput = Pick<

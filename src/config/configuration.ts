@@ -18,7 +18,6 @@ export default () => ({
     retries: parsePositiveInt(process.env.CLASSIFIER_RETRIES, 2),
   },
   intentDetection: {
-    mappingVersion: process.env.INTENT_MAPPING_VERSION ?? 'v1',
     fallbackIntent: process.env.FALLBACK_INTENT ?? 'live_agent_escalation',
   },
 });

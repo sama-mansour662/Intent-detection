@@ -52,7 +52,6 @@ curl --location 'http://localhost:3000/api/v1/intent-detection' \
   "intent": "Flight + CS + Cancel",
   "intentGroup": "cs",
   "confidence": "mapped",
-  "mappingVersion": "v1",
   "conversationId": "wa-123",
   "classification": {
     "uuid": "483d0d52-d044-4cea-975c-e68614b9fd42",
@@ -71,4 +70,4 @@ curl --location 'http://localhost:3000/api/v1/intent-detection' \
 
 Mappings live in `src/modules/intent-detection/infra/mapping/intent-mapping.config.ts`.
 
-Rules are evaluated in order. More specific rules should come before broader fallback rules. Add a new mapping version by appending a new config object and setting `INTENT_MAPPING_VERSION`.
+Rules are evaluated in order. More specific rules should come before broader fallback rules. Edit group-specific rules in `infra/mapping/rules/`.

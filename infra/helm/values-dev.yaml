@@ -46,5 +46,4 @@ environment_variable:
     CLASSIFIER_BASE_URL: "http://ds-stage.alm-data.io"
     CLASSIFIER_TIMEOUT_MS: "2500"
     CLASSIFIER_RETRIES: "2"
-    INTENT_MAPPING_VERSION: "v1"
     FALLBACK_INTENT: "live_agent_escalation"

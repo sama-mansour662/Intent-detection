@@ -32,7 +32,6 @@ export class IntentDetectionService {
           intent: mapped.intent,
           intentGroup: mapped.intentGroup,
           confidence: 'mapped',
-          mappingVersion: mapped.mappingVersion,
           conversationId: request.conversationId,
           classification,
         };
@@ -68,10 +67,6 @@ export class IntentDetectionService {
         'live_agent_escalation',
       ),
       confidence: 'fallback',
-      mappingVersion: this.configService.get<string>(
-        'intentDetection.mappingVersion',
-        'v1',
-      ),
       fallbackReason: reason,
       conversationId,
       classification,
