@@ -7,7 +7,6 @@ export default () => ({
   env: process.env.ENV ?? 'local',
   auth: {
     secretKey: process.env.INTERNAL_SECRET_KEY,
-    headerName: process.env.INTERNAL_SECRET_HEADER ?? 'x-internal-secret',
   },
   classifier: {
     baseUrl:

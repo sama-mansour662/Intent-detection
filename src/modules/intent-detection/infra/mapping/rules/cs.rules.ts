@@ -1,11 +1,9 @@
 import { IntentMappingRule } from '../../../domain/intent-mapping.types';
 
 export const csMappingRules: IntentMappingRule[] = [
-  // Generic
   { intent: 'CS + Cancel', intentGroup: 'cs', pending: true },
   { intent: 'CS + Amend', intentGroup: 'cs', pending: true },
 
-  // Stays
   { intent: 'Stay + CS + Complaint', intentGroup: 'cs', pending: true },
   { intent: 'Stay + CS + HCN', intentGroup: 'cs', pending: true },
   { intent: 'Stay + CS + Special request', intentGroup: 'cs', pending: true },
@@ -15,7 +13,6 @@ export const csMappingRules: IntentMappingRule[] = [
   { intent: 'Stay + CS + Date amend', intentGroup: 'cs', pending: true },
   { intent: 'Stay + CS + Amend', intentGroup: 'cs', pending: true },
 
-  // Flights — more-specific rule first, then catch-all variant
   {
     intent: 'Flight + CS + Cancel',
     intentGroup: 'cs',

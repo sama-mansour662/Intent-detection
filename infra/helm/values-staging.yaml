@@ -42,7 +42,6 @@ environment_variable:
     ENV: 'staging'
     PORT: '80'
     HOST: '0.0.0.0'
-    INTERNAL_SECRET_HEADER: 'x-internal-secret'
     CLASSIFIER_BASE_URL: 'http://ds-stage.alm-data.io'
     CLASSIFIER_TIMEOUT_MS: '2500'
     CLASSIFIER_RETRIES: '2'

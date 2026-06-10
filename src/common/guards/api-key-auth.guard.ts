@@ -25,19 +25,13 @@ export class ApiKeyAuthGuard implements CanActivate {
       return true;
     }
 
-  
-
     const configuredSecret = this.configService.get<string>('auth.secretKey');
     if (!configuredSecret) {
       throw new UnauthorizedException('Internal secret key is not configured');
     }
 
     const request = context.switchToHttp().getRequest();
-    const headerName = this.configService.get<string>(
-      'auth.headerName',
-      'x-internal-secret',
-    );
-    const providedSecret = request.headers[headerName.toLowerCase()];
+    const providedSecret = request.headers['x-internal-secret'];
 
     if (providedSecret !== configuredSecret) {
       throw new UnauthorizedException('Invalid internal secret key');
